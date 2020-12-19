@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>echarts</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/comm.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/media.css"/>
+    <style type="text/css">
+        #home {
+            opacity: 0.70;
+            margin: 0 auto;
+            width: 75%;
+            min-width: 150px;
+            background-color: #fff;
+            padding: 30px;
+            -webkit-border-radius: 20px;
+            margin-top: 100px;
+            margin-bottom: 50px;
+            box-shadow: 5px 10px rgba(100, 100, 100, 0.3);
+        }
+        #mytable {
+            width:150px;
+            padding:0;
+            margin:0;
+            margin-left:50px;
+        }
+        tr{
+          font: bold 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+          color: #4f6b72;
+          border-bottom: 1px solid #C1DAD7;
+          border-top: 1px solid #C1DAD7;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          text-align: left;
+          white-space:nowrap;
+          padding: 10px 3px 10px 5px;
+        }
+        td {
+          border-right: 1px solid #C1DAD7;
+          border-bottom: 1px solid #C1DAD7;
+          background: #fff;
+          padding: 10px 3px 10px 5px;
+          color: #4f6b72;
+          white-space:nowrap;
+      }
+      #ss{
+          float:left;
+          margin-top:-450px;
+          margin-left:140px;
+      }
+
+
+
+    </style>
+    <style>
+        body{
+            color: #000;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            min-height: 101%;
+            overflow: hidden;
+        }
+
+
+    </style>
+
+</head>
+<body style="background: url(../static/images/beijing.jpg);background-repeat: no-repeat;">
+
+<nav class="navbar navbar-default" style="background-color:rgba(0, 0, 0, 0.85)">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul style="list-style: none;display: inline-block; margin-top:20px;margin-right:25px">
+                <li style="display: inline-block;margin-right:8px;">
+                    <a href="/" style="color:#FFF"> 首页 </a>
+                </li>
+                <li class="hidden-xs hidden-sm" style="display: inline-block;margin-right:8px">
+                    <a style="color:#FFF" href="/pa" target="_blank" rel="nofollow"> 数据采集 </a>
+                </li>
+                <li class="hidden-xs hidden-sm" style="display: inline-block;margin-right:8px">
+                    <a style="color:#FFF" href="/tf_idf" target="_blank" rel="nofollow"> 特征值搜索 </a>
+                </li>
+                <li class="hidden-xs hidden-sm" style="display: inline-block;margin-right:8px">
+                    <a style="color:#FFF" href="/tf" target="_blank" rel="nofollow"> 特征值可视化 </a>
+                </li>
+                <li style="display: inline-block;margin-right:8px">
+                    <a style="color:#FFF" href="/relatedwords" target="_blank" rel="nofollow"> 相关词 </a>
+                </li>
+                <li class="hidden-xs hidden-sm" style="display: inline-block;margin-right:8px">
+                    <a style="color:#FFF" href="/pred" target="_blank" rel="nofollow"> 预测值 </a>
+                </li>
+                <li class="hidden-xs hidden-sm" style="display: inline-block;margin-right:8px">
+                    <a style="color:#FFF" href="/hotword" target="_blank" rel="nofollow"> 热点词 </a>
+                </li>
+                <li style="display: inline-block;margin-right:8px">
+                    <a style="color:#FFF" href="/trend" target="_blank" rel="nofollow"> 情感追踪 </a>
+                </li>
+                <li class="hidden-xs hidden-sm" style="display: inline-block;margin-right:8px">
+                    <a style="color:#FFF" href="/visual" target="_blank" rel="nofollow"> 疫情可视化 </a>
+                </li>
+            </ul>
+
+            <div class="navbar-right">
+                <a href="/search" target="_blank" rel="nofollow"><img src="../static/images/index_img/sou.png"
+                                                                      width="25" alt="大数据分析" height="25"
+                                                                      align="absmiddle"></a>
+                <div class="language">
+                    <a href="/login" target="_blank" rel="nofollow">用户登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div id='home'>
+    <table id='mytable'>
+        <tr>
+            <td>相关词</td>
+            <td>相关系数</td>
+        </tr>
+        {%for k,v in data_dict.items() %}
+        <tr>
+            <td>{{k}}</td>
+            <td>{{v}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div id="echarts" style="margin-top:-430px;float:left;margin-left:170px;">
+        {{ myechart|safe }}
+    </div>
+</div>
+<div class="footer hidden-xs" style="position:relative;top:1px;">
+    <div class="container">
+        <div class="clearfix">
+            <dl>
+                <dt>王牌优势</dt>
+                <dd>
+                    <a href=" ">一站式平台</a>
+                </dd>
+                <dd>
+                    <a href=" ">自助式分析</a>
+                </dd>
+                <dd>
+                    <a href=" ">警报系统</a>
+                </dd>
+                <dd>
+                    <a href=" ">强大分析功能</a>
+                </dd>
+                <dd>
+                    <a href=" ">可视化大屏</a>
+                </dd>
+                <dd>
+                    <a href=" ">创新新产品</a>
+                </dd>
+                <dd>
+                    <a href=" ">超多大数据</a>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>行业范围</dt>
+                <dd>
+                    <a href=" ">金融行业</a>
+                </dd>
+                <dd>
+                    <a href=" ">制造行业</a>
+                </dd>
+                <dd>
+                    <a href=" ">零售行业</a>
+                </dd>
+                <dd>
+                    <a href=" ">政府行业</a>
+                </dd>
+                <dd>
+                    <a href=" ">高教行业</a>
+                </dd>
+                <dd>
+                    <a href=" ">电力行业</a>
+                </dd>
+                <dd>
+                    <a href=" ">交通行业</a>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>案例</dt>
+                <dd>
+                    <a href=" ">中信银行</a>
+                </dd>
+                <dd>
+                    <a href=" ">中国移动</a>
+                </dd>
+                <dd>
+                    <a href=" ">国家电网</a>
+                </dd>
+                <dd>
+                    <a href=" ">航天科工</a>
+                </dd>
+                <dd>
+                    <a href=" ">格力电器</a>
+                </dd>
+                <dd>
+                    <a href=" ">科技部</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>支持</dt>
+                <dd>
+                    <a href=" " target='_blank' rel="nofollow">帮助中心</a>
+                </dd>
+
+                <dd>
+                    <a href=" " rel="nofollow">APP下载</a>
+                </dd>
+                <dd>
+                    <a href=" " rel="nofollow">产品文档</a>
+                </dd>
+                <dd>
+                    <a href=" " target='_blank' rel="nofollow">产品教程</a>
+                </dd>
+                <dd>
+                    <a href=" " rel="nofollow">授权验证</a>
+                </dd>
+                <dd>
+                    <a href=" " rel="nofollow">服务公告</a>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>关于</dt>
+                <dd>
+                    <a href=" " rel="nofollow">公司介绍</a>
+                </dd>
+                <dd>
+                    <a href=" " rel="nofollow">管理团队</a>
+                </dd>
+                <dd>
+                    <a href=" " rel="nofollow">工作机会</a>
+                </dd>
+                <dd>
+                    <a href=" " rel="nofollow">联系我们</a>
+                </dd>
+                <dd>
+                    <a href=" " rel="nofollow">媒体报道</a>
+                </dd>
+                <dd>
+                    <a href=" ">行业资讯</a>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>更多</dt>
+                <dd>
+                    <a href=" " rel="nofollow">渠道代理</a>
+                </dd>
+                <dd>
+                    <a href=" " target="_blank" rel="nofollow">应用市场</a>
+                </dd>
+                <dd>
+                    <a href=" " target="_blank" rel="nofollow">舆情社区</a>
+                </dd>
+            </dl>
+
+            <dl class="f-right">
+                <dt>联系热线</dt>
+                <dt>404-888-8888</dt>
+            </dl>
+        </div>
+        <div style="height:0.5rem;"></div>
+        <div class="con_box " style="padding: 1rem 0 0;">
+            <p class="text-left cff">Copyright © 2020-2222 石家庄舆情科技有限公司 京ICP备12050607号 京公网安备110110802011451号</p>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
