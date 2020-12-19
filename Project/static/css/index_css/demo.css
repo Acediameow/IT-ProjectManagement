@@ -1,0 +1,102 @@
+*{
+    margin:0;
+    padding:0;
+}
+	 
+#box>ul{
+    list-style: none;
+}
+#box>ul>li{
+    list-style: none;
+}
+
+.one{
+    margin-left: 100px;
+ 	float: left;
+}
+
+.two{
+    width: 1000px;
+    height:20px;
+    margin-left: 120px;
+    float: left;   
+    position: absolute;
+    overflow: hidden;
+}
+
+.two p{
+    font-size: 12px;
+    line-height: 1.5em;
+    color:red;        
+	width: 350px;
+	overflow: hidden;
+	position: absolute;
+	right: -200px;              
+}
+
+.box{
+    width: 1200px;
+ 	height: 530px;
+ 	margin:0 auto;
+	margin-top: 15px;
+	margin-bottom: 50px;
+ 	position: relative;
+ 	overflow: hidden;
+}
+
+.slider{
+    width: 8400px;
+    height: 450px;
+    margin:0 auto;
+    position: absolute;
+    left:-1200px;
+}
+
+.slide{
+    width: 1200px;
+    height: 450px;
+    margin:0 auto;
+    overflow: hidden;
+    float:left;
+}
+
+.box>span{
+    display: block;
+    width:30px;
+    height: 50px;
+    text-align: center;
+    cursor:pointer;
+    color: #cccccc;
+    top:175px;
+    line-height: 50px;
+    background:#808069;
+    font-size: 30px;
+    position: absolute;
+    opacity: 0; 
+}
+    
+#left{
+    left: 30px;
+}
+ 		
+#right{
+    right: 30px;
+}
+ 		
+.nav{
+ 	position: absolute;
+ 	left: 500px;
+ 	bottom: 1px;
+}
+
+.nav>li{
+    float: left;
+ 	width: 20px;
+ 	height: 20px;
+ 	background:#cccccc;
+ 	cursor: pointer;
+ 	margin: 0 10px;
+ 	border-right:50%;
+ 	border-radius: 50%;
+ 	text-align: center;  
+}

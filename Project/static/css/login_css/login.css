@@ -1,0 +1,69 @@
+*{
+    padding: 0;
+	margin: 0;
+}
+
+.box{
+	width: 600px;
+	height: 480px;
+	padding: 0 20px;
+	border: 10px solid rgb(0,0,0,0.5);
+	margin: 50px auto;
+	margin-top:100px
+}
+		
+.tit{
+	margin-top: 5px;
+	margin-bottom: 30px;
+	color:white
+}
+
+.brand{
+	color: rgb(255,255,255);
+	font-size: 35px;
+	margin-right: 20px;
+}
+		
+.inp{
+	width: 80%;
+	height: 40px;
+	text-indent: 20px;
+	margin-left:50px
+}
+
+.notice{
+	height: 30px;
+	line-height: 30px;
+	margin-left:55px;
+	font-size: 12px;
+	color:white
+}
+
+.code{
+	width: 45%;
+}
+		
+.getCode{
+	width: 30%;
+	height: 44px;
+	margin-left:22px;
+	border: none;
+	background: rgb(0,0,0,0.5);
+	color:white
+}
+
+.codeImg{
+	height: 35px;
+	margin-left:55px;
+	color:white
+}
+		
+.btn{
+	background: rgb(0,0,0,0.5);
+	width: 100%;
+	height: 40px;
+	border: none;
+	margin-top: 8px;
+	color: #fff;
+	border-radius: 3px;
+}
